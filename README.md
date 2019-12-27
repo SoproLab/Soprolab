@@ -1,9 +1,8 @@
 Carte à  microcontrôleur ESP32 avec microPython
 
-Exemple de code Python pour utiliser la carte SoproLab et tester ses fonctionnalitéss.
+Exemple de code Python pour utiliser la carte SoproLab et tester ses fonctionnalités.
 
 
-<code>
 """
 Code de test des fonctionnalit\'e9s de la carte SOPROLAB V1.0
 """
@@ -32,17 +31,17 @@ sleep_ms(200)
 BP.drapeau = False # Drapeau est mis à True et reste ensuite à True, Il faut le remettre à False (acquitement)
 
 BMP.mesure()
-print("Pression atmosph\'e9rique\'a0: ", BMP.pression)
-print("Temp\'e9rature ambiante\'a0: ", BMP.temperature)
+print("Pression atmosphérique : ", BMP.pression)
+print("Température ambiante : ", BMP.temperature)
 
-print("Appuyez sur le bouton poussoir pour continuer ...\'a0")
+print("Appuyez sur le bouton poussoir pour continuer ...")
 
 while BP.impulsion==False:
     continue
 sleep_ms(200) # BP.impulsion reste à True pendant 200 ms pour éviter les problèmes de rebond. Retour à False ensuite
 
 POT.mesure()
-print("Valeur du potentiom\'e8tre\'a0: ", POT.valeur )
+print("Valeur du potentiomètre : ", POT.valeur )
 print("Tension mesurée au potentiomètre : {:3.2f} V".format(POT.tension))
 
 LDR.mesure()
@@ -70,4 +69,4 @@ BUZ.son( note['RE'], 250 )
 BUZ.son( note['MI'], 250 )
 BUZ.son( note['DO'], 250 )
 BUZ.son( note['RE'], 250 )
-</code>
+
