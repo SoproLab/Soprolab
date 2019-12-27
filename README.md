@@ -10,7 +10,7 @@ from SOPROLAB import *
 
 input ("Appuyer sur [ Enter ] pour commencer le test ... ")
 
-LED_v.on()  # Allumer la LED verte 
+LED_v.on()  # Allumer la LED verte
 LED_j.on()  # Allumer la LED jaune
 LED_r.on()  # Allumer la LED rouge
 sleep_ms(1000) # Temporisation de 1000 ms
