@@ -6,34 +6,31 @@ Chaque module est donc considéré comme un "objet" (une instance de classe dans
  
 # ========= Module DS18B20 :
 Capteur numérique de température
-  - Objet : 
-  
-    DS
-  - Méthode : 
-    
-    DS.mesure()
-  - Résultat : 
-  
-    valeur = DS.temperature
+  - Objet : <br />  
+      DS
+  - Méthode :  <br />
+      DS.mesure()
+  - Résultat : <br />
+      valeur = DS.temperature
 
 # ========= Module UltraSon Version 1 :
-Capteur de distance HCSR04
-  - Objet : 
+Capteur de distance HCSR04<br />
+  - Objet : <br />
       HCSR
   - Méthode :
-      valeur = HCSR.distance_mm()
-      valeur = HCSR.distance_cm()
+      valeur = HCSR.distance_mm()<br />
+      valeur = HCSR.distance_cm()<br />
 
 # ========= Module UltraSon Version 2 :
 Capteur de distance HCSR04 fixé sur un servo moteur
-  - Objets : 
-      HCSR
+  - Objets : <br />
+      HCSR<br />
       PIV
-  - Méthodes :
-      valeur = HCSR.distance_mm()
-      valeur = HCSR.distance_cm()
+  - Méthodes :<br />
+      valeur = HCSR.distance_mm()<br />
+      valeur = HCSR.distance_cm()<br />
       PIV.direction ( angle, vitesse ) # angle : [ 0, 180] / vitesse : [ 1 ; 10 ]
-=== Note ===
+=== Note ===<br />
 Sur la version 2, le capteur de distance est fixé sur un servo moteur orientable sur 180° : l'objet PIV ( pivot ). 
 
 # ========= Module LCD :
