@@ -7,11 +7,14 @@ Chaque module est donc considéré comme un "objet" (une instance de classe dans
 # ========= Module DS18B20 :
 Capteur numérique de température
   - Objet : 
+  
     DS
   - Méthode : 
+    
     DS.mesure()
   - Résultat : 
-  valeur = DS.temperature
+  
+    valeur = DS.temperature
 
 # ========= Module UltraSon Version 1 :
 Capteur de distance HCSR04
