@@ -1,5 +1,4 @@
-# Parce que la pédagogie ne doit pas s'adapter à un microcontrôleur
-# mais le microcontrôleur doit être au service de la pédagogie.
+# Parce que la pédagogie ne doit pas s'adapter à un microcontrôleur mais le microcontrôleur doit être au service de la pédagogie.
 
 La carte SoproLab permet de mettre facilement en oeuvre des dispositifs expérimentaux en intérgant des microcontrôleurs programmés en Python.
 
