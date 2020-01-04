@@ -3,7 +3,7 @@
 La carte SoproLab permet de mettre facilement en oeuvre des dispositifs expérimentaux en intérgant des microcontrôleurs programmés en Python.
 
 La carte est commercialisée par l'entreprise soprolec ( basée au Mans ).
-\n Présentation de la carte : https://j-chouteau.org/index.php/carte-soprolab/
+Présentation de la carte : https://j-chouteau.org/index.php/carte-soprolab/
 
 Vous trouverez ici des exemples de programmes en Python pour utiliser la carte SoproLab :
 - dans des expériences de Physique - Chimie en seconde et spécialité physique
