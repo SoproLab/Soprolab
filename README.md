@@ -2,6 +2,7 @@
 # This code is used to test the differents functions
 # Explanations on this website ( in French ) : https://j-chouteau.org/index.php/carte-soprolab/
 # Test_SOPROLAB.py 2019-12-28 - 12h -
+<code>
 """
 Code de test des fonctionnalités de la carte SOPROLAB V1.0
 Exemples de code pour utiliser les fonctionnalités de la carte ainsi que les objets et variables de la bibliothèque SOPROLAB.py
@@ -188,3 +189,4 @@ for cptr in range ( nbval ): # Afficher les [ nbval ] mesures stockées dans l'e
     print("{:03d} , {:1.2f}".format(temps, valeur) ) # Affichage au format CSV
 
 print("===============  FIN DU TEST ================")
+</code>
