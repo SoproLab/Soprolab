@@ -72,6 +72,5 @@ Code microPython pour mesurer la celerite du son dans l'air
  # Autres modules et bibliothèques à venir ....
 - Mesure de l'absorption de lumière Rouge/Verte/Bleue
 - Mesure de lumière IR / Visilbe / UVA
-- Mesure de la vitesse du son dans l'air
 
 Plus d infos sur le site : https://j-chouteau.org/index.php/carte-soprolab/
