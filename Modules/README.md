@@ -4,24 +4,6 @@ Ces bibliothèques sont programmées sur le principe de la propragammation orien
 Chaque module est donc considéré comme un "objet" (une instance de classe dans le jargon informatique) sur lequel s'appliquent
  les méthodes qui permettent de communiquer avec le module : [ objet.mesure() ] pour effectuer une mesure par exemple.
  
-
-# ========= Module LCD :
-Ecran LCD rétroéclairé : 16 caractères / 2 lignes
-  - Objet :
-      LCD
-  - Méthodes : 
-      LCD.effacer()
-      LCD.texte(" ")
-      LCD.place_curseur( x ,y ) # x [ 0; 15 ]  /  y [ 0 - 1 ] (ligne)
-      LCD.curseur_on()
-      LCD.curseur_off()
-      LCD.curseur_blink_on()
-      LCD.curseur_blink_off()
-      LCD.ecran_off()
-      LCD.ecran_on()
-      LCD.backlight_off()
-      LCD.backlight_on()
-      LCD.caractere (' ')
  
  # ========= Module Celerité du son dans l'air :
 => SOPROLAB_celeriteSon.py :
