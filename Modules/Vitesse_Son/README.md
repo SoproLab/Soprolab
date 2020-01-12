@@ -1,5 +1,5 @@
-Autheur : Jacques Chouteau
-Date de la dernière modification : 12 janvier 2020
+Autheur : Jacques Chouteau < /br>
+Date de la dernière modification : 12 janvier 2020< /br>
 
 Ce dossier contient les fichiers nécessaires à l'utilisation du module Son de la carte SoproLab :
  . SOPROLAB_Son.py -> gestion du module
