@@ -19,5 +19,5 @@ Capteur de distance HCSR04 fixé sur un servo moteur
 Sur la version 2, le capteur de distance est fixé sur un servo moteur orientable sur 180° : l'objet PIV ( pivot ). 
 
 ------  Sources : </br>
-http://www.micropython.org
+http://www.micropython.org<br />
 section forum ....
