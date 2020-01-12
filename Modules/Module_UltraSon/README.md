@@ -1,6 +1,23 @@
-Le module en version 1 est fixé sur un support fixe.
+# ========= Module UltraSon Version 1 :
+Capteur de distance HCSR04
+  - Objet : <br />
+      HCSR
+  - Méthode : <br />
+      valeur = HCSR.distance_mm()<br />
+      valeur = HCSR.distance_cm()<br />
 
-Le module en version 2 est fixé sur un servo moteur. Il est donc orientable.</br>
-Dans la version 2 sont implémentées des fonctions de gestion du servo moteur pour orienter le capteur HCSR04 :</br>
-  PIV.direction ( angle ( 0<->180), vitesse de déplacement (1<->10) )
- 
+# ========= Module UltraSon Version 2 :
+Capteur de distance HCSR04 fixé sur un servo moteur
+  - Objets : <br />
+      HCSR<br />
+      PIV
+  - Méthodes :<br />
+      valeur = HCSR.distance_mm()<br />
+      valeur = HCSR.distance_cm()<br />
+      PIV.direction ( angle, vitesse ) # angle : [ 0, 180] / vitesse : [ 1 ; 10 ]
+=== Note ===<br />
+Sur la version 2, le capteur de distance est fixé sur un servo moteur orientable sur 180° : l'objet PIV ( pivot ). 
+
+------  Sources : </br>
+http://www.micropython.org
+section forum ....
