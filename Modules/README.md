@@ -4,14 +4,6 @@ Ces bibliothèques sont programmées sur le principe de la propragammation orien
 Chaque module est donc considéré comme un "objet" (une instance de classe dans le jargon informatique) sur lequel s'appliquent
  les méthodes qui permettent de communiquer avec le module : [ objet.mesure() ] pour effectuer une mesure par exemple.
  
-# ========= Module DS18B20 :
-Capteur numérique de température <br />
-<b>  - Objet : </b><br />  
-      DS
-  - Méthode :  <br />
-      DS.mesure()
-  - Résultat : <br />
-      valeur = DS.temperature
 
 # ========= Module UltraSon Version 1 :
 Capteur de distance HCSR04
