@@ -38,3 +38,22 @@ Un exemple de séance pédagogique avec différenciation peut être construit de
  - Tester avec un tuyau de longueur inconnue et comparer avec un mètre ruban.</br>
  
  Y a plus qu'à ...  ;-)
+ 
+ 
+ # ========= Module Celerité du son dans l'air :
+=> SOPROLAB_celeriteSon.py :<br />
+Module pour mesurer la célérité du son dans l'air contenu dans un tuyau PE de 2m.<br />
+(tuyau de diamètre 16mm utilisé pour la distribution d'eau dans les habitations)<br />
+  - Objets :<br />
+      buzzer<br />
+      microphone<br />
+  - Méthodes : <br />
+      Chrono_µs-on()<br />
+      Chronoµs—off()<br />
+      buzzer.on ( )<br />
+      buzzer.off ( )<br />
+      t0 = Chrono_µs—on ( )<br />
+      duree = Chrono_µs—off ( ) - t0<br />
+
+=> celerite_son.py<br />
+Code microPython pour mesurer la celerite du son dans l'air
