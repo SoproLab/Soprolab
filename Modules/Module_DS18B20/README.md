@@ -12,6 +12,6 @@ Capteur numérique de température <br />
       valeur = DS.temperature
 
 ---- Sources : </br>
-http://www.micropython.org
+http://www.micropython.org </br>
 DS18x20 temperature sensor driver for MicroPython. </br>
 MIT license; Copyright (c) 2016 Damien P. George
