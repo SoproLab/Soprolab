@@ -1,9 +1,10 @@
 Autheur : Jacques Chouteau </br>
-Date de la dernière modification : 12 janvier 2020</br>
+Date de la dernière modification : 18 janvier 2020</br>
 
 Ce dossier contient les fichiers nécessaires à l'utilisation du module Son de la carte SoproLab :</br>
- . SOPROLAB_Son.py -> gestion du module</br>
- . Celerite_son.py -> exemple d'utilisation</br>
+ . SOPROLAB_Son.py -> gestion du module (buzzer et microphone en programmation objet)</br>
+ . Celerite_son.py -> exemple d'utilisation avec affichage dans la Console USB</br>
+ . Celerite_son_LCD.py -> exemple d'utilisation avec affichage sur le module LCD et dans la Console USB</br>
  . quelques images pour visualiser ( mises à jour à venir ...)</br>
  
 Un exemple de séance pédagogique avec différenciation peut être construit de la façon suivante :
@@ -55,5 +56,5 @@ Module pour mesurer la célérité du son dans l'air contenu dans un tuyau PE de
       t0 = Chrono_µs—on ( )<br />
       duree = Chrono_µs—off ( ) - t0<br />
 
-=> celerite_son.py<br />
+=> celerite_son.py et celerite_son_LCD.py<br />
 Code microPython pour mesurer la celerite du son dans l'air
