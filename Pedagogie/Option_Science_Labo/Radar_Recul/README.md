@@ -7,7 +7,7 @@ Cette activité est menée sur trois séances (minimum)</br>
 
 <b>Matériels :</b></br>
 1 carte SoproLab</br>
-1 le capteur de distance à ultrasons HCSR04</br>
+1 capteur de distance à ultrasons HCSR04</br>
 
 Note : Dans le cadre de l’option Sciences et Laboratoire, je n’utilise pas les objets BUZ et BP de la bibliothèque 
 SOPROLAB.py car je souhaite aborder des notions propres aux microcontrôleurs : la configuration des broches. 
