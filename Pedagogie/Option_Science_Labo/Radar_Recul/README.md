@@ -15,11 +15,11 @@ Cela permet d’aborder l’état d’une broche 0, 1 et donc le principe vibrat
 Avec les objets BUZ cette notion serait transparente.
 
 <b>Notions de sciences physiques abordées :</b></br>
-	- Notion de période et de fréquence pour un son</br>
-	- Relation entre la hauteur d'un son et sa période, sa fréquence</br>
-	- Propagation du son dans l’air (phénomène d’écho)</br>
-	- Synthèse additive des couleurs de lumière </br>
-	- Prendre en compte la variation des mesures</br>
+- Notion de période et de fréquence pour un son</br>
+- Relation entre la hauteur d'un son et sa période, sa fréquence</br>
+- Propagation du son dans l’air (phénomène d’écho)</br>
+- Synthèse additive des couleurs de lumière </br>
+- Prendre en compte la variation des mesures</br>
   
 Chacun réfléchit sur l’algorithme avant de mettre en commun au sein du groupe.</br>
 Puis, les élèves mettent en commun leurs idées pour déterminer un algorithme commun par groupe.</br>
