@@ -1,11 +1,11 @@
 Cette activité est menée sur trois séances (minimum)</br>
 
-Objectifs :</br>
+<b>Objectifs :</b></br>
 - Utiliser un capteur à ultrason pour mesurer une distance,</br>
 - Indiquer par un signal sonore et ou lumineux à quelle distance se situe l’obstacle,</br>
 - Produire un son de période, fréquence et donc hauteur variables.</br>
 
-Matériels :</br>
+<b>Matériels :</b></br>
 1 carte SoproLab</br>
 1 le capteur de distance à ultrasons HCSR04</br>
 
@@ -14,7 +14,7 @@ SOPROLAB.py car je souhaite aborder des notions propres aux microcontrôleurs : 
 Cela permet d’aborder l’état d’une broche 0, 1 et donc le principe vibratoire et périodique d’un phénomène sonore.</br>
 Avec les objets BUZ cette notion serait transparente.
 
-Notions de sciences physiques abordées :</br>
+<b>Notions de sciences physiques abordées :</b></br>
 	- Notion de période et de fréquence pour un son</br>
 	- Relation entre la hauteur d'un son et sa période, sa fréquence</br>
 	- Propagation du son dans l’air (phénomène d’écho)</br>
