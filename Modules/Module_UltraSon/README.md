@@ -1,3 +1,5 @@
+<a href="https://github.com/SoproLab/Soprolab/tree/master/Pedagogie/Option_Science_Labo/Radar_Recul"> Exemple d'activité pédagogique : radar de recul </a>
+
 # ========= Module UltraSon Version 1 :
 Capteur de distance HCSR04
   - Objet : <br />
