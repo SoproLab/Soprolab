@@ -5,7 +5,7 @@ La carte SoproLab permet de mettre facilement en oeuvre des dispositifs expérim
 La carte est commercialisée par l'entreprise soprolec ( basée au Mans ).
 
 Une notice d'utilisation de la carte est disponible dans le fichier :</br>
-<b><a href="https://github.com/SoproLab/Soprolab/blob/master/Notice_Utilisation.pdf"> Notice_Utilisation.pdf </a></b>/br>
+<b><a href="https://github.com/SoproLab/Soprolab/blob/master/Notice_Utilisation.pdf"> Notice_Utilisation.pdf </a></b></br>
 
 Vidéo de présentation de la carte : https://j-chouteau.org/index.php/carte-soprolab/
 
