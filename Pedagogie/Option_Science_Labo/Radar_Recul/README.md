@@ -25,6 +25,12 @@ Chacun réfléchit sur l’algorithme avant de mettre en commun au sein du group
 Puis, les élèves mettent en commun leurs idées pour déterminer un algorithme commun par groupe.</br>
 Ensuite, le codage se fait par groupes de 3 élèves maximum.
 
+Deux fichiers supplémentaires ont été ajoutés : </br>
+- Prog08_HCSR_LED-V2.py</br>
+- Prog09_HCSR_BUZ_fct-V2.py</br>
+Ces fichiers présentent l'avantage d'avoir recours à la bibliothèque SOPROLAB pour simplifier le codage de l'algorithme.</br>
+Ils présentent de même une autre fçaon de coder un double test : [ if 50 < d < 100 : ]
+
 Le fichier compressé contient la fiche de présentation en pdf ainsi que tous les fichiers .py (algorithmes et codes Python)
 
 Bonne lecture ...
