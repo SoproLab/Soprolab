@@ -1,3 +1,10 @@
+## ! Attention ce dossier utilise une version obsolète de la bibliothèque SoproLab.py
+Une mise à jour est nécessaire suite à l'évolution de la carte SoproLab vers la version 2
+ <i>Dorénavant le module LCD est placé sur le microcontrôleur. Il peut être considéré comme intégré à la carte. <br />
+ De ce fait les bibliothèques du module LCD sont intégrées à la bibliothèque principale qui devient SoproLab_V2.py
+ Par conséquent il est nécessaire que ce dossier soit mis à jour ( mise à jour programmée pour mi-mai 2020 - ...)
+ Il est possible de me contacter si besoin pour obtenir une version mise à jour plus rapidement ...</i>
+
 Autheur : Jacques Chouteau </br>
 Date de la dernière modification : 18 janvier 2020</br>
 
