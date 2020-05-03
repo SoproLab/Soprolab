@@ -1,9 +1,9 @@
 # Mesure de tension avec un ADS1015
 ## Convertisseur analogique / numérique 
-### - 4 entrées soit indépendantes, soit couplées deux à deux pour de la mesure différentielle
-### - Echantillonnage avec fréquence paramétrable de 8 à 860 échantillons par seconde
-### - Gain variable programmable en fonction de Umax de 0,256V à 6,144V
-### - Convertion sur 12 bits : [ -2018 ; +2048 ]
+<strong> - 4 entrées soit indépendantes, soit couplées deux à deux pour de la mesure différentielle
+<br /> - Echantillonnage avec fréquence paramétrable de 8 à 860 échantillons par seconde
+<br /> - Gain variable programmable en fonction de Umax de 0,256V à 6,144V
+<br /> - Convertion sur 12 bits : [ -2018 ; +2048 ]</strong>
 
 Application à la mesure de tension lors de la charge ou la décharge d'un condensateur.
 
