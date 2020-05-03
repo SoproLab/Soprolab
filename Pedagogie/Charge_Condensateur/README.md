@@ -24,4 +24,4 @@ Toute la partie déclaration de variables / paramétrage est déportée dans une
 Le code est nettement simplifié.
 L'élève peut alors focaliser sont attention sur la partie [ effectuer / exploiter des mesures ].
  
-![Courbe de charge de 4 condensateurs](/4_condensateurs.png)
+![Courbe de charge de 4 condensateurs](/SoproLab/Soprolab/blob/master/Pedagogie/Charge_Condensateur/4_condensateurs.png)
