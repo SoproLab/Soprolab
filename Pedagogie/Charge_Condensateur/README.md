@@ -23,5 +23,10 @@ Cette version peut paraître complexe pour un novice en Python ( élèves )
 Toute la partie déclaration de variables / paramétrage est déportée dans une bibliothèque : Capteur_ADS1015.py
 Le code est nettement simplifié.
 L'élève peut alors focaliser sont attention sur la partie [ effectuer / exploiter des mesures ].
- 
+ <br />
+ <br />
+ *Valeurs numériques en ordonnées comprises entre 0 et 2048 -> [ 0; 3,3V ]
+ *Abscisse : le temps en ms
+*Condensateurs : 1µF - 2,2 µF - 3,3 µF - 4,7 µF chacun en série avec une résistance de 100 kΩ
+*On obtient une valeur expérimentale de RC = 0,099s pour une valeur théorique de 0,1s (avec 100kΩ - 1µF)
 ![Courbe de charge de 4 condensateurs](https://github.com/SoproLab/Soprolab/blob/master/Pedagogie/Charge_Condensateur/4_condensateurs.png)
