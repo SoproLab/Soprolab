@@ -90,9 +90,9 @@ def _httpHandlerTestPost(httpClient, httpResponse) :
     if LCD_ok :
         sleep(2)
         if passwrd=='NSI':
-            LCD.afficher(0,1, "== Loging OK ==")
+            LCD.afficher(0,1, "== Logging OK ==")
         else:
-            LCD.afficher(0,1, "= Loging ERROR =")
+            LCD.afficher(0,1, "=Logging ERROR=")
         sleep(2)
         LCD.backlight_off()
                      
@@ -196,9 +196,9 @@ def _httpHandlerTestGet(httpClient, httpResponse, args={}) :
     if LCD_ok :
         sleep(2)
         if passwrdOk and idOk :
-            LCD.afficher(0,1, "== Loging OK ==")
+            LCD.afficher(0,1, "== Logging OK ==")
         else:
-            LCD.afficher(0,1, "= Loging ERROR =")
+            LCD.afficher(0,1, "=Logging ERROR=")
         sleep(2)
         LCD.backlight_off()
 
