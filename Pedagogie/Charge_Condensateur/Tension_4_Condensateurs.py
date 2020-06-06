@@ -1,6 +1,16 @@
 """
 Ce code permet de mesurer la tension sur les 4 canaux de l'ADS1015.
-
+1 - Lancer le code
+2 - Appuyer sur l'interrupteur pour mesurer les tensions soit lors de la charge
+ou la décharge des condensateurs.
+3 - Les valeurs mesurées s'affichent une fois l'acquisition terminée
+4 - Un copier / coller dans une feuille de calculs permet d'obtenir facilement
+un graphique.
+Un calcul de portionnalité devra toutefois être effectué pour obtenir
+une valeur de tension (V) et non simplement le résultat de la conversion numérique.
+Umax : 4,096V pour une valeur numérique de 2048.
+Hors, les condensateurs sont alimentés en 3,3 V et on obtient un maximum
+lors de la conversion de 1660 -> 1660/2048x4,096 = 3,32V soit Umax (CQFD)
 """
 from machine import Pin, I2C # Paramétrage des broches de l'ESP32
 from micropython import const
