@@ -1,5 +1,90 @@
+"""
+Version start.py : 10/06/2020
+Modification : La gestion des messages sur le LCD est traité en dehors
+du bloc de gestion des led rouge/jaune/verte
+-> L'affichage sur le LCD passe par un formulaire de saisie accessible
+à l'adresse : <IP de la carte>/LCD
+"""
 from SOPROLAB_V2 import *
 from microWebSrv import MicroWebSrv
+
+# ----------------------------------------------------------------------------  LCD
+@MicroWebSrv.route('/LCD')           # <IP>/LCD
+def _httpHandlerLedWithArgs(httpClient, httpResponse, args={}) :
+    LCD.afficher( 0, 1, "Req LCD GET")
+    # stockage de la page web dans une variable texte
+    print("#### HTTP - Demande Connexion Client pour affichage LCD########## GET")
+    msg = httpClient.GetRequestHeaders()
+    print(msg)
+    print("=============================")
+    content = """\
+    <!DOCTYPE html>
+    <html lang=fr>
+        <head>
+            <meta charset="UTF-8" />
+            <title>TEST POST</title>
+        </head>
+        <body>
+            <h4>Message pour l'écran LCD :</h4>
+            IP address du Client = %s <br />
+            <h3>Message à afficher :</h3>
+            <div style="font-size:28px; background-color:#4499EE">
+            <form action="/LCD_message" method="GET" accept-charset="ISO-8859-1">
+                Ligne1 : <input type="text" name="ligne1" size="28"><br />
+                Ligne2 : <input type="text" name="ligne2" size="28"><br />
+                <input type="submit" value="VALIDER">
+            </form>
+            </div>
+        </body>
+    </html>
+    """ % httpClient.GetIPAddr()
+    # Le serveur répond en envoyant la page web 
+    httpResponse.WriteResponseOk( headers        = None,
+                                  contentType    = "text/html",
+                                  contentCharset = "UTF-8",
+                                  content        = content )
+# ----------------------------------------------------------------------------  GET LCD
+@MicroWebSrv.route('/LCD_message', 'GET')
+def _httpHandlerTestGet(httpClient, httpResponse, args={}) :
+    print("########## HTTP - Traitement du message à afficher ########## <GET>")
+    msg = httpClient.GetRequestHeaders()
+    print("GetRequestQueryParams ",msg)
+    print("======= Données =============")
+    args = httpClient.GetRequestQueryParams()
+    print("GetRequestQueryParams ",args)
+    print("Données récupérées du formulaire :")
+    for arg in args.keys():
+        print(arg, " : ", args[arg] )
+        if arg=='ligne1' :
+            txt1 = args[arg]
+        if arg=='ligne2':
+            txt2 = args[arg]
+    LCD.backlight_on()
+    LCD.afficher(0,0, txt1)
+    LCD.afficher(0,1, txt2)
+    sleep(3)
+    LCD.backlight_off()
+    
+    reponse_Web = """\
+    <!DOCTYPE html>
+    <html lang=fr>
+        <head>
+            <meta charset="UTF-8" />
+            <title>TEST GET</title>
+        </head>
+        <body>
+            <h4>Ok message affiché</h4>
+            Votre address IP : %s <br />
+            <button type"button"><a href="/LCD">AUTRE MESSAGE</a></button>
+        </body>
+    </html>
+    """ % httpClient.GetIPAddr()
+    # Le serveur répond en envoyant la page web 
+    httpResponse.WriteResponseOk( headers        = None,
+                                  contentType    = "text/html",
+                                  contentCharset = "UTF-8",
+                                  content        = reponse_Web )
+
 # ----------------------------------------------------------------------------  POST
 
 @MicroWebSrv.route('/formPOST')
@@ -90,9 +175,9 @@ def _httpHandlerTestPost(httpClient, httpResponse) :
     if LCD_ok :
         sleep(2)
         if passwrd=='NSI':
-            LCD.afficher(0,1, "== Logging OK ==")
+            LCD.afficher(0,1, "== Loging OK ==")
         else:
-            LCD.afficher(0,1, "=Logging ERROR=")
+            LCD.afficher(0,1, "= Loging ERROR =")
         sleep(2)
         LCD.backlight_off()
                      
@@ -196,9 +281,9 @@ def _httpHandlerTestGet(httpClient, httpResponse, args={}) :
     if LCD_ok :
         sleep(2)
         if passwrdOk and idOk :
-            LCD.afficher(0,1, "== Logging OK ==")
+            LCD.afficher(0,1, "== Loging OK ==")
         else:
-            LCD.afficher(0,1, "=Logging ERROR=")
+            LCD.afficher(0,1, "= Loging ERROR =")
         sleep(2)
         LCD.backlight_off()
 
@@ -208,8 +293,6 @@ def _httpHandlerTestGet(httpClient, httpResponse, args={}) :
 @MicroWebSrv.route('/led/<myLed>')             # <IP>/led/R           ->   args['myLed'] = 'V' / 'J' / 'R'
 @MicroWebSrv.route('/led/<myLed>/etat/<etat>')   # <IP>/led/R/etat/ON   ->   args['myLed']='R'  args['etat']='ON' / 'OFF'
 @MicroWebSrv.route('/led')                     # <IP>/led               ->   args={}
-@MicroWebSrv.route('/LCD/<myTexte>')           # <IP>/LCD/Bonjour ->   args=['myTexte']='Bonjour'
-
 def _httpHandlerLedWithArgs(httpClient, httpResponse, args={}) :
     content = """\
     <!DOCTYPE html>
@@ -227,16 +310,7 @@ def _httpHandlerLedWithArgs(httpClient, httpResponse, args={}) :
         led_ctrl = "{}".format(args['myLed']) # V ou J ou R
         print("led_ctrl :", led_ctrl)
         content += "<p>led = "+led_ctrl+"</p>"
-
-    if 'myTexte' in args :
-        LCD_ctrl = "{}".format(args['myTexte']) # Texte à afficher
-        print("LCD_ctrl :", LCD_ctrl)
-        content += "<p>Texte pour l'écran LCD = "+LCD_ctrl+"</p>"
-        try :
-            LCD.afficher(0,1,LCD_ctrl)
-        except :
-            print("\nAffichage sur l'écran LCD impossible !!!\n")
-    
+        
     if 'etat' in args :
         action = "{}".format(args['etat']) # ON ou OFF
         content += "<p>etat = "+action+"</p>"
