@@ -9,3 +9,5 @@ Vidéo de présentation de la carte : https://j-chouteau.org/index.php/carte-sop
 Vous trouverez ici des exemples de programmes en Python pour utiliser la carte SoproLab :
 
 Contact : https://j-chouteau.org/index.php/contact/
+
+(img href="https://github.com/SoproLab/Soprolab/blob/master/Soprolab-BBC/Visuel.jpg")
