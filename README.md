@@ -19,3 +19,5 @@ Vous pouvez directement télécharger les programmes [ Download zip ] dans les d
 et d'autres activités à venir ...
 
 Contact : https://j-chouteau.org/index.php/contact/
+
+![60% center](SoproLab-V2-LCD.jpg)
