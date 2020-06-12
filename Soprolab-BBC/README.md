@@ -10,4 +10,4 @@ Vous trouverez ici des exemples de programmes en Python pour utiliser la carte S
 
 Contact : https://j-chouteau.org/index.php/contact/
 
-(img href="https://github.com/SoproLab/Soprolab/blob/master/Soprolab-BBC/Visuel.jpg")
+![80% center](Visuel.jpg)
