@@ -1,4 +1,4 @@
-# Mesure de tension sur une entrée Analogique / numérique
+# Mesure de tension sur une entrée analogique / numérique
 
 Application à la mesure de tension lors de la charge ou la décharge d'un condensateur.
 
@@ -15,4 +15,4 @@ Il est donc nécessaire de faire la déclaration des broches en mode analogique
  <br /> Ici j'utilise un condensateur 4,7 µF et une résistance de 100 kΩ.
  <br /> Le temps est indiqué en millisecondes.
  
-<br /> [Courbe de charge d'un condensateur](https://github.com/SoproLab/Soprolab/blob/master/Pedagogie/Condensateur_Module_1_bornier/Charge_condensateur.png)
+<br /> ![Courbe de charge d'un condensateur](https://github.com/SoproLab/Soprolab/blob/master/Pedagogie/Condensateur_Module_1_bornier/Charge_condensateur.png)
