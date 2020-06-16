@@ -29,4 +29,4 @@ L'élève peut alors focaliser sont attention sur la partie [ effectuer / explo
  <br />*Abscisse : le temps en ms*
  <br />*Condensateurs : 1µF - 2,2 µF - 3,3 µF - 4,7 µF chacun en série avec une résistance de 100 kΩ*
  <br />*On obtient une valeur expérimentale de RC = 0,099s pour une valeur théorique de 0,1s (avec 100kΩ - 1µF)*
-![Courbe de charge de 4 condensateurs](https://github.com/SoproLab/Soprolab/blob/master/Pedagogie/Charge_Condensateur/4_condensateurs.png)
+![Courbe de charge de 4 condensateurs](https://github.com/SoproLab/Soprolab/blob/master/Pedagogie/Condensateurs_Sonde_4_entrees/4_condensateurs.png)
