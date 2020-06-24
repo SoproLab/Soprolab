@@ -16,3 +16,4 @@ Il est donc nécessaire de faire la déclaration des broches en mode analogique
  <br /> Le temps est indiqué en millisecondes.
  
 <br /> ![Courbe de charge d'un condensateur](https://github.com/SoproLab/Soprolab/blob/master/Pedagogie/Condensateur_Module_1_bornier/Charge_condensateur.png)
+<br /> ![Mise en place du module de mesure avec bornier] (https://github.com/SoproLab/Soprolab/blob/master/Pedagogie/Condensateur_Module_1_bornier/Module_Condensateur_1.jpg)
