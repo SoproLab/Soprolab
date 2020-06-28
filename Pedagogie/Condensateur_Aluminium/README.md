@@ -1,7 +1,7 @@
 # Réalisation d'un condensateur cylindrique
 # Aluminium / Polypropylène
 
-Voir le fichier *bilan activiité.pdf* sur la réalisation d'un condensateur, la mesure expérimentale de sa capacité et la vérification.
+Voir le fichier *bilan activité.pdf* ci-dessus sur la réalisation d'un condensateur, la mesure expérimentale de sa capacité et la vérification.
 
 
  <br />
