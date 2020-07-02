@@ -9,7 +9,7 @@ Bouton = Pin ( 35, Pin.IN ) # Broche reliée au bouton poussoir
 
 while Bouton.value() == False: # Tant que le bouton poussoir n'a pas été enfoncé
 
-    d = HCSR.distance_mm( )    # mesurer la distance
+    d = HCSR.distance_mm    # mesurer la distance
     
     if d > 1000 : # Si la distance est supérieure à 1000 mm alors
         ledv.on()  # Allumer la LED verte et éteindre les autres LED

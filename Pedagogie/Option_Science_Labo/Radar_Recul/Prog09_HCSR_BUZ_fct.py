@@ -18,7 +18,7 @@ def Produire_son ( periode ):
     
 while Bouton.value() == False: # Tant que le bouton poussoir n'a pas été enfoncé
 
-    d = HCSR.distance_mm() # mesurer la distance
+    d = HCSR.distance_mm # mesurer la distance
     
     if d < 100 : # distance inférieure à 100mm
         Produire_son ( 470 )

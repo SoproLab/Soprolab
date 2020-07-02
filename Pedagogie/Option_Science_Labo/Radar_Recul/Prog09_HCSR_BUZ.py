@@ -9,7 +9,7 @@ periode = 2500 # Par défaut période = 2500µs (obstacle au delà de 500mm)
 
 while Bouton.value() == False: # Tant que le bouton poussoir n'a pas été enfoncé
 
-    d = HCSR.distance_mm() # mesurer la distance
+    d = HCSR.distance_mm # mesurer la distance
     
     if d < 100 : # distance inférieure à 100mm
         periode = 470
