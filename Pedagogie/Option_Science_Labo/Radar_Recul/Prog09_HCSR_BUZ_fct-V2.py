@@ -1,12 +1,10 @@
-from SOPROLAB import *
+from SOPROLAB_V2 import *
 from SOPROLAB_UltraSonV1 import * # bibliothèque du capteur de distance à ultrasons
-
-n = 150 # valeur d'initialisation sans intérêt
 
 BP.drapeau = False    
 while BP.drapeau == False: # Tant que le bouton poussoir n'a pas été enfoncé
 
-    d = HCSR.distance_mm() # mesurer la distance
+    d = HCSR.distance_mm # mesurer la distance
     
     if d < 100 : # distance inférieure à 100mm
         n = 40
