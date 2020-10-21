@@ -2,6 +2,7 @@
 
 Le cahier des charges (objectif n°1) est de passer de la première version :<br />
 <div align="center">
+  
 ![IHM de base](https://github.com/SoproLab/Soprolab/blob/master/Pedagogie/SpeNSI_SerreConnectee/Code_Python/www/Presentation_1.jpg)
 </div>
 à une version ou un seul bouton s'affiche selon la position de la trappe d'aération :
