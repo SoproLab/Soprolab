@@ -58,3 +58,5 @@ En Python, un dictionnaire permet alors d'associer une valeur à une direction :
 
 Il reste à développer un circuit imprimé et simplifier la connectique pour rendre cette maquette facilement réalisable par une équipe d'enseignants peu outillés.<br />
 L'impression 3D de la structure de la serre n'est plus vraiment un obstacle aujourd'hui étant donné que des machines se sont beaucoup démocratisées ces dernières années notamment dans les collèges ...
+<br />
+![Photo du prototype de maquette](https://github.com/SoproLab/Soprolab/blob/master/Pedagogie/SpeNSI_SerreConnectee/mini_serre_00.jpg)
