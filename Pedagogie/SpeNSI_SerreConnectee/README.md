@@ -60,3 +60,4 @@ Il reste à développer un circuit imprimé et simplifier la connectique pour re
 L'impression 3D de la structure de la serre n'est plus vraiment un obstacle aujourd'hui étant donné que des machines se sont beaucoup démocratisées ces dernières années notamment dans les collèges ...
 <br />
 ![Photo du prototype de maquette](https://github.com/SoproLab/Soprolab/blob/master/Pedagogie/SpeNSI_SerreConnectee/mini_serre_00.jpg)
+![IHM serre connectee](https://github.com/SoproLab/Soprolab/blob/master/Pedagogie/SpeNSI_SerreConnectee/Code_Python/www/Objectif_1.jpg)
