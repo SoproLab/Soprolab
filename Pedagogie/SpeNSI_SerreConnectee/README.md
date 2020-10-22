@@ -59,22 +59,32 @@ Dans ce contexte, il convient alors de repenser la chaîne de traitement de l'in
 Les capteurs à effet Hall 49E (détection d'un aimant) permettent de déterminer la période de rotation d'un disque et ou la position approximative de celui-ci. Associés à des amplificateurs opérationnels montés en comparateurs (LM339) on peut ainsi réaliser d'une part un anémomètre et d'autre part une boussole.<br />
 Ces capteurs permettent ainsi de mettre en pratique les capteurs à distance donc sans interaction physique avec le système contrairement aux interrupteurs de fin de course qui déterminent si la trappe est ouverte ou fermée.<br />
 <br />
-**-> Anémomètre :** Il permet d'aborder la mesure de temps : la période de rotation de l'axe afin de déterminer une vitesse de rotation. Il restera à déterminer l'étalonnage de l'anémomètre afin d'en conclure la relation entre vitesse de rotation et vitesse du vent, notion d'étalonnage abordée en spécialité sciences physiques.<br />
+**-> Anémomètre :**
+Il permet d'aborder la mesure de temps : la période de rotation de l'axe afin de déterminer une vitesse de rotation. Il restera à déterminer l'étalonnage de l'anémomètre afin d'en conclure la relation entre vitesse de rotation et vitesse du vent, notion d'étalonnage abordée en spécialité sciences physiques.<br />
 <br />
-**-> Girouette :** Un disque muni de huit capteurs 49E permettent de déterminer la position de la girouette selon les quatre directions cardinales et les quatre directions ordinales. Là aussi, il conviendra d'avoir recours à un étalonnage de position notamment en équipant la maquette d'un compas numérique facilement accessible à faible coût. Ce point peut être laissé à la réflexion des élèves sur l'évolution à donner au projet pour le rendre plus fonctionnel ou les précautions d'usage à prévoir ...<br />
+**-> Girouette :**
+Un disque muni de huit capteurs 49E permettent de déterminer la position de la girouette selon les quatre directions cardinales et les quatre directions ordinales. Là aussi, il conviendra d'avoir recours à un étalonnage de position notamment en équipant la maquette d'un compas numérique facilement accessible à faible coût. Ce point peut être laissé à la réflexion des élèves sur l'évolution à donner au projet pour le rendre plus fonctionnel ou les précautions d'usage à prévoir ...<br />
 <br />
-<table><tr><td>
-*** Liens avec des notions connexes du référentiel :***
+<table>
+    <tr>
+        <td>
+    <strong> *** Liens avec des notions connexes du référentiel :*** </strong>
 Le principal intérêt de cette girouette est d'aborder le codage d'une information sur huit bits. En effet, une entrée du pcf8574 passe à 1 lorsque le capteur associé détecte la position de l'aimant devant lui. Le PCF8574 transmet alors l'information au microcontrôleur sous la forme d'un octet où un seul bit est à 1 selon la position de l'axe de la girouette -> 1, 2, 4, 8, 16 ... 128.<br />
 On peut aussi aborder ici la transmission d'une information depuis un capteur jusqu'au microntrôleur au regard de contraintes : distance / parasitage / précision / connexions / traitement de l'information / étalonnage / ...). Le bus i2c permet aussi de faire un parallèle avec le transfert d'informations dans le contexte d'une carte mère (bus de données, ...)<br />
 <br />
-C'est aussi l'occasion d'aborder un outil en Python adapté à ce type de sitaution : le dictionnaire.<br />
-Il permet alors d'associer une valeur à une direction : { 1:Nord, 2:Nord-Est, 4:Est, ...}<br /> </td>
-    <td><img src="https://github.com/SoproLab/Soprolab/blob/master/Pedagogie/SpeNSI_SerreConnectee/coupe.jpg" alt="Coupe transversale de la girouette"></td></tr></table>
+C'est aussi l'occasion d'aborder un outil en Python adapté à ce type de situation : **le dictionnaire**.<br />
+Il permet alors d'associer une valeur (clé) à une direction (value) : { 1:Nord, 2:Nord-Est, 4:Est, ...}<br />
+    </td>
+    <td>Coupe tranversale de la girouette<br />
+        <img src="https://github.com/SoproLab/Soprolab/blob/master/Pedagogie/SpeNSI_SerreConnectee/coupe.jpg" alt="Coupe transversale de la girouette" width="600">
+    </td>
+   </tr>
+</table>
 <br />
-**Capteur de lumière :** LDR (Light Dependent Resistor): Pour aborder la conversion analogique numérique, une LDR a été installée sur la maquette. La valeur de la luminosité est convertie sur une échelle de 0 à 4095 puisque le convertisseur analogique numérique de l'ESP32 est codé sur 12 bits.<br />
+**Capteur de lumière :** <br />
+LDR (Light Dependent Resistor): Pour aborder la conversion analogique numérique, une LDR a été installée sur la maquette. La valeur de la luminosité est convertie sur une échelle de 0 à 4095 puisque le convertisseur analogique numérique de l'ESP32 est codé sur 12 bits.<br />
 <br />
-**Développer l'I.H.M.**<br />
+**Développer une I.H.M.**<br />
 <br />
 **Led blanche :** une led blanche permet de simuler l'éclairage de la serre dans le cas d'un ensoleillement insuffisant. Grace à la LDR, on peut ainsi déterminer un seuil en dessous duquel il convient d'allumer la lumière.<br />
 <br />
@@ -82,6 +92,20 @@ Il permet alors d'associer une valeur à une direction : { 1:Nord, 2:Nord-Est, 4
 <br />
 **Afficheur à cristaux liquides :** un afficheur LCD 16 caractères sur chacune des deux lignes permet là aussi d'informer l'utilisateur sur les valeurs obtenues lors des mesures de grandeurs telles que la température, la pression ou l'humidité relative ou bien encore l'état du système : trappe ouverte ou fermée, ...<br />
 <br />
+### Activité elève ###
+
+Dans un premier temps, elle porte sur l'analyse de la chaîne de traitement de l'information depuis le capteur jusqu'à l'actionneur.<br />
+On donne une documentation technique sur le capteur de température / pression / humidité : le BME280. A partir de ce document, l'élève doit en extraire les informations pertinentes pour le projet et l'exploitation des données.<br />
+<br />
+Dans une deuxième temps, on lui demande de mettre en pratique ses connaissances sur le langage HTML/CSS/JS pour modifier l'IHM Web de telle sorte que le bouton OUVRIR ne doit s'afficher que si le toit est fermé et à contrario le bouton FERMER ne doit s'afficher que si le toit est ouvert.<br />
+<strong>=== Précision sur le fonctionnement ===</strong>
+Nous n'avons pas ici un serveur apache/php/sql ! les données ne sont pas stockées dans une table avant d'être intégrées dans la page Web. Cependant, on peut facilement faire le parallèle avec python dans notre activité et php sur un serveur Web.<br />
+Ici, nous avons fait le choix de placer des balises orphelines <variable_temperature>, <variable_pression>, <variable_toit>, ... dans le code HTML et JS pour recevoir ensuite les données en fonctione de l'état du système.<br />
+C'est la fonction Web_page (Cf code python) qui remplacera ces balises par les informations adhoc dans la page Web avant d'être transmise au Client.<br />
+<br />
+Pour les plus "audacieux" l'IHM pourra être complétée avec la sélection d'un mode automatique / manuel auquel cas, il faudra déterminer la température de contrainte pour l'ouverture de la trappe via l'IHM ...<br />
+<br />
+
 **La suite ...**
 Il reste à développer un circuit imprimé et simplifier la connectique pour rendre cette maquette facilement réalisable par une équipe d'enseignants peu outillés.<br />
 L'impression 3D de la structure de la serre n'est plus vraiment un obstacle aujourd'hui étant donné que ces machines se sont beaucoup démocratisées ces dernières années, notamment dans les collèges ...
