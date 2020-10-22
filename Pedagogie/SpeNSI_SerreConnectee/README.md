@@ -1,17 +1,19 @@
 # Mini serre connectée
 ## Projet d'activité autour d'une IHM
-**Le principal objectif est d'aborder :
+<strong>Le principal objectif est d'aborder :
 - les notions de capteurs ( analogique, numérique, de contact, à distance, ... )
 - les notions de transfert et traitement de l'information ( utilisation d'un microcontrôleur, bus de communication i2c, connexion wifi, ... ),
-- les notions d'actionneurs piloté via une Interface Homme Machine : I.H.M. ( écran LCD ou navigateur Web )**
+- les notions d'actionneurs piloté via une Interface Homme Machine : I.H.M. ( écran LCD ou navigateur Web )</strong>
 <br />
 L'évolution d'un projet : de la micro-station météo à la serre connectée muni d'un système aération piloté via une interface Web.<br />
 
 ## La micro station météo : Client <-> Serveur
-<textarea display="inline">
+<div column-count="2">
     A l'origine, le projet se voulait simple : un ESP8266-ESP01 équipé d'un capteur DHT11 : quelques euros, pas de soudure : un kit disponible prêt à l'emploi. L'ESP8266 peut faire office de micro serveur web via un socket *(en connexion Wifi)* programmé en microPython.<br />
-    On obtient ainsi la température et l'humidité relative de l'air ambiant, données que l'on peut transmettre en HTML pour être visualisées via un navigateur.</textaera>
-  <img alt="esp01 et DHT11" display="inline" float="right" src="https://github.com/SoproLab/Soprolab/blob/master/Pedagogie/SpeNSI_SerreConnectee/esp01_DHT11.jpg">
+    On obtient ainsi la température et l'humidité relative de l'air ambiant, données que l'on peut transmettre en HTML pour être visualisées via un navigateur.<br />
+
+<img alt="esp01 et DHT11" display="inline" float="right" src="https://github.com/SoproLab/Soprolab/blob/master/Pedagogie/SpeNSI_SerreConnectee/esp01_DHT11.jpg" width="240" height="160">
+</div>
 
 ## Un projet de mini-serre
 
