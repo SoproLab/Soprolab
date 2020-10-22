@@ -43,33 +43,50 @@ Lors de la réalisation, on a eu quelques soucis de connexion avec le prototype.
 <br />
 ### Des soucis de connexion
 Cependant les petits soucis multipliés par le nombre de groupes en situation de simulation d'activité élève lors de la formation rendent le projet peut confortable au risque de perdre trop de temps à résoudre les problèmes des uns et des autres.<br />
-### Un dispositif assez limité dans les scénarios pédagogiques
+<table><tr><td>
+    <h3> Un dispositif assez limité dans les scénarios pédagogiques </h3>
 Compte tenu du fait qu'on ne pouvait pas développer davantage les connexions avec le microcontrôleur, les perspectives d'évolution étaitent très limitées.<br />
-<table><tr><td>Certes, l'utilisation d'un Wemos D1 en lieu et place d'un ESP8266-ESP01 aurait permis une plus grande souplesse.<br />
-Mais quitte à changer de microcontrôleur autant prendre son grand frèse pour le même budget : l'ESP32.<td>
+Certes, l'utilisation d'un Wemos D1 en lieu et place d'un ESP8266-ESP01 aurait permis une plus grande souplesse.<br />
+Mais quitte à changer de microcontrôleur autant prendre son grand frère pour le même budget : l'ESP32.<td>
     <td><img src="https://github.com/SoproLab/Soprolab/blob/master/Pedagogie/SpeNSI_SerreConnectee/wemos.jpg" width="400" alt="Wemos D1 : esp8266 et capteurs, indicateurs lumineux, ... en sandwitch"></td></tr></table>
 
 ### Ouvrir les horizons des possibles
 Dans ce contexte, il convient alors de repenser la chaîne de traitement de l'information pour intégrer d'autres types de capteurs ou d'IHM et pourquoi pas produire une maquette qui pourrait alors servir de support pour un groupe d'élèves dans le cadre d'un mini projet et ou projet NSI !<br />
+<center>
 
 ![Photo du prototype de maquette](https://github.com/SoproLab/Soprolab/blob/master/Pedagogie/SpeNSI_SerreConnectee/Diagramme.jpg)
 
+</center>
 **Capteurs à effet Hall :**
-Les capteurs à effet Hall 49E (détection d'un aimant) permettent de déterminer la période de rotation d'un disque et ou la position approximative de celui-ci. Associés à des amplificateurs opérationnels montés en comparateurs (LM339) on peut ainsi réaliser d'une part un anémomètre et d'autre part une boussole numériques.<br />
-Ces capteurs permettent ainsi de mettre en pratique les capteurs à distance dont sans interaction physique avec le système contrairement aux interrupteurs de fin de course.<br />
-**-> Anémomètre :** Le premier permet d'aborder la mesure de temps afin de déterminer une vitesse de rotation. Il restera à déterminer l'étalonnage de l'anémomètre afin d'en conclure la relation entre vitesse de rotation et vitesse du vent, notion d'étalonnage abordée en spécialité sciences physiques.<br />
-**-> Boussole :** Un disque muni de huit capteurs 49E permettent de déterminer la position de la girouette selon des quatre directions cardinales et les quatre directions ordinales. Là aussi, il conviendrait d'avoir recours à un étalonnage de position notamment en équipant la maquette d'un compas numérique facilement accessible à faible coût. Ce point peut être laissé à la réflexion des élèves qui souhaiteraient développer ce projet.<br />
+Les capteurs à effet Hall 49E (détection d'un aimant) permettent de déterminer la période de rotation d'un disque et ou la position approximative de celui-ci. Associés à des amplificateurs opérationnels montés en comparateurs (LM339) on peut ainsi réaliser d'une part un anémomètre et d'autre part une boussole.<br />
+Ces capteurs permettent ainsi de mettre en pratique les capteurs à distance donc sans interaction physique avec le système contrairement aux interrupteurs de fin de course qui déterminent si la trappe est ouverte ou fermée.<br />
+<br />
+**-> Anémomètre :** Il permet d'aborder la mesure de temps : la période de rotation de l'axe afin de déterminer une vitesse de rotation. Il restera à déterminer l'étalonnage de l'anémomètre afin d'en conclure la relation entre vitesse de rotation et vitesse du vent, notion d'étalonnage abordée en spécialité sciences physiques.<br />
+<br />
+**-> Girouette :** Un disque muni de huit capteurs 49E permettent de déterminer la position de la girouette selon les quatre directions cardinales et les quatre directions ordinales. Là aussi, il conviendra d'avoir recours à un étalonnage de position notamment en équipant la maquette d'un compas numérique facilement accessible à faible coût. Ce point peut être laissé à la réflexion des élèves sur l'évolution à donner au projet pour le rendre plus fonctionnel ou les précautions d'usage à prévoir ...<br />
+<br />
+*** Liens avec des notions connexes du référentiel :***
 Le principal intérêt de cette girouette est d'aborder le codage d'une information sur huit bits. En effet, une entrée du pcf8574 passe à 1 lorsque le capteur associé détecte la position de l'aimant devant lui. Le PCF8574 transmet alors l'information au microcontrôleur sous la forme d'un octet où un seul bit est à 1 selon la position de l'axe de la girouette -> 1, 2, 4, 8, 16 ... 128.<br />
-En Python, un dictionnaire permet alors d'associer une valeur à une direction : { 1:Nord, 2:Nord-Est, ...}<br />
+On peut aussi aborder ici la transmission d'une information depuis un capteur jusqu'au microntrôleur au regard de contraintes : distance / parasitage / précision / connexions / traitement de l'information / étalonnage / ...). Le bus i2c permet aussi de faire un parallèle avec le transfert d'informations dans le contexte d'une carte mère (bus de données, ...)<br />
+<br />
+C'est aussi l'occasion d'aborder un outil en Python adapté à ce type de sitaution : le dictionnaire.<br />
+Il permet alors d'associer une valeur à une direction : { 1:Nord, 2:Nord-Est, 4:Est, ...}<br />
+<br />
 **Capteur de lumière :** LDR (Light Dependent Resistor): Pour aborder la conversion analogique numérique, une LDR a été installée sur la maquette. La valeur de la luminosité est convertie sur une échelle de 0 à 4095 puisque le convertisseur analogique numérique de l'ESP32 est codé sur 12 bits.<br />
 <br />
 **Développer l'I.H.M.**<br />
-**Led blanche :** une led blanche permet de simuler l'éclairage de la serre dans le cas d'un ensoleillement insuffisant. Grace à la LDR, on peut ainsi déterminer un seuil en dessous duquel il convient d'allumer la lumière.<br />
-**Interrupteur et bouton poussoir :** un interrupteur à bascule et un bouton poussoir permettent de mettre en place différents scénarios où l'utilisateur peut interagir physiquement pour transmettre une commande.<br />
-**Afficheur à cristaux liquides :** un afficheur LCD 16 caractères deux lignes permet là aussi d'informer l'utilisateur sur les valeurs obtenues lorsq des mesures de grandeurs telles que la température, la pression ou l'humidité relative ou bien encore l'état du système : trappe ouverte ou fermée, ...<br />
-
-Il reste à développer un circuit imprimé et simplifier la connectique pour rendre cette maquette facilement réalisable par une équipe d'enseignants peu outillés.<br />
-L'impression 3D de la structure de la serre n'est plus vraiment un obstacle aujourd'hui étant donné que des machines se sont beaucoup démocratisées ces dernières années notamment dans les collèges ...
 <br />
-![Photo du prototype de maquette](https://github.com/SoproLab/Soprolab/blob/master/Pedagogie/SpeNSI_SerreConnectee/mini_serre_00.jpg)
-![IHM serre connectee](https://github.com/SoproLab/Soprolab/blob/master/Pedagogie/SpeNSI_SerreConnectee/Code_Python/www/Objectif_1.jpg)
+**Led blanche :** une led blanche permet de simuler l'éclairage de la serre dans le cas d'un ensoleillement insuffisant. Grace à la LDR, on peut ainsi déterminer un seuil en dessous duquel il convient d'allumer la lumière.<br />
+<br />
+**Interrupteur et bouton poussoir :** un interrupteur à bascule et un bouton poussoir permettent de mettre en place différents scénarios où l'utilisateur peut interagir physiquement pour transmettre une commande.<br />
+<br />
+**Afficheur à cristaux liquides :** un afficheur LCD 16 caractères sur chacune des deux lignes permet là aussi d'informer l'utilisateur sur les valeurs obtenues lors des mesures de grandeurs telles que la température, la pression ou l'humidité relative ou bien encore l'état du système : trappe ouverte ou fermée, ...<br />
+<br />
+**La suite ...**
+Il reste à développer un circuit imprimé et simplifier la connectique pour rendre cette maquette facilement réalisable par une équipe d'enseignants peu outillés.<br />
+L'impression 3D de la structure de la serre n'est plus vraiment un obstacle aujourd'hui étant donné que ces machines se sont beaucoup démocratisées ces dernières années, notamment dans les collèges ...
+<br />
+<table><tr><td>Visuel du prototype<br />
+    <img alt="Photo du prototype de maquette" src="https://github.com/SoproLab/Soprolab/blob/master/Pedagogie/SpeNSI_SerreConnectee/mini_serre_00.jpg" /></td>
+<td>IHM via l'interface Web<br />
+    <img alt="IHM serre connectee" src="https://github.com/SoproLab/Soprolab/blob/master/Pedagogie/SpeNSI_SerreConnectee/Code_Python/www/Objectif_1.jpg" /></td></tr></table>
