@@ -9,7 +9,7 @@ L'évolution d'un projet : de la micro-station météo à la serre connectée mu
 
 ## La micro station météo : Client <-> Serveur
 <table><tr><td>
-    A l'origine, le projet se voulait simple : un ESP8266-ESP01 équipé d'un capteur DHT11 : quelques euros, pas de soudure : un kit disponible prêt à l'emploi. L'ESP8266 peut faire office de micro serveur web via un socket *(en connexion Wifi)* programmé en microPython.<br />
+    A l'origine, le projet se voulait simple : un ESP8266-ESP01 équipé d'un capteur DHT11 : quelques euros, pas de soudure : un kit disponible prêt à l'emploi. L'ESP8266 peut faire office de micro serveur web via un socket <i>(en connexion Wifi)</i> programmé en microPython.<br />
     On obtient ainsi la température et l'humidité relative de l'air ambiant, données que l'on peut transmettre en HTML pour être visualisées via un navigateur.<br /></td>
 <td>
 <img src="https://github.com/SoproLab/Soprolab/blob/master/Pedagogie/SpeNSI_SerreConnectee/esp01_DHT11.jpg" alt="esp01 et DHT11" align=middle width="260">
@@ -20,31 +20,37 @@ L'évolution d'un projet : de la micro-station météo à la serre connectée mu
 ![Schéma d'une mini-serre avec trappe d'aération](https://github.com/SoproLab/Soprolab/blob/master/Pedagogie/SpeNSI_SerreConnectee/mini_serre_v2.jpg)
 Suite à des échanges dans le cadre d'une formation DU ES-NSI, nous nous sommes orientés vers une situation plus étoffée dans le contexte d'une mini-serre.<br />
 Afin de présenter la chaîne de traitement de l'information, il fallait alors partir du capteur et aller jusqu'à l'actionneur en passant par l'IHM.<br />
-En guise d'actionneur, le plus simple était d'équipe le toit le la serre d'une trappe d'aération actionnée par un servo moteur.<br />
-Même si ce type de motorisation ne nécessite pas forcément de rétrocontrôle pour déterminer la position del a trappe, dans le cas d'un asservissement, il convenait d'équiper le dispositif de deux interrupteurs de fin de course : position ouverte et position fermée.<br />
+En guise d'actionneur, le plus simple était d'équiper le toit le la serre d'une trappe d'aération actionnée par un servo moteur ce qui évitait les interfaces de puissance pour piloter un moteur à courant continu.<br />
+Même si ce type de motorisation ne nécessite pas forcément de rétrocontrôle pour déterminer la position de la trappe, dans le cas d'un asservissement, il convenait d'équiper le dispositif de deux interrupteurs de fin de course : position ouverte et position fermée.<br />
 <br />
-Les deux GPIO *(entrée / sortie)* disponibles sur l'ESP8266-ESP01 devenaient alors insuffisants :
-- un pour le capteur numérique DHT11,
-- un pour pour commander le servo moteur.<br />
+Les deux GPIO 0 et 2 <i>(entrée / sortie)</i> disponibles sur l'ESP8266-ESP01 devenaient alors insuffisantes :
+- une pour le capteur numérique DHT11,
+- une pour pour commander le servo moteur.<br />
 
 Il fallait donc récupérer deux autres ports en soudant deux autres fils de connexion directement sur le microcontrôleur, ce qui n'est pas chose facile avec une puce au format SSOP ! <br />
 Une fois le tout installé sur un plaque à trous métallisés il restait à relier le microcontrôleur à l'ordinateur pour la programmation.<br />
-Pour cela, nous avons confectionné des cordons de connexion muni d'un convertisseur de type FTDI pour assurer la conversion entre le port de communication USB côté ordinateur et le port sériel Rx/Tx côté microcontrôleur. <br />
-<br />
-L'IDE de programmation retenu est Thonny. Il confère un environnement confortable et intuitif pour la programmation en microPython. D'autres font le choix de Mu ou encore VsCode avec les plugin qui permettent d'établir une connexion avec les ESP32 ou ESP8266.
+<table><td><tr>
+Pour cela, nous avons confectionné des cordons de connexion muni d'un convertisseur de type FTDI pour assurer la conversion entre le port de communication USB côté ordinateur et le port série Rx/Tx côté microcontrôleur. <br />
+    <br /></tr>
+    <tr><img src="https://github.com/SoproLab/Soprolab/blob/master/Pedagogie/SpeNSI_SerreConnectee/ftdi.jpg" alt="ftdi adaptation USB - TxTx" align=middle width="300">
+    </tr></td></table>
+L'IDE de programmation retenu est Thonny. Il confère un environnement confortable et intuitif pour la programmation en microPython. D'autres enseignants font le choix de Mu ou encore VsCode avec les plugin qui permettent d'établir une connexion avec les ESP32 ou ESP8266.<br />
+Dans la prochaine version 3.3, il sera possible d'éditer directement dans l'éditeur les fichiers HTML/CSS/JS stockés dans la mémoire flash du microcontrôleur, ce qui facilitera grandement les mises à jour et le développement d'un projet comme celui présenté ici.<br />
 
 ## Pourquoi faire simple quand on peut faire plus complet ?
 
 Lors de la réalisation, on a eu quelques soucis de connexion avec le prototype. L'interfaçage avec Windows n'était pas toujours chose facile mais globalement le projet était encourageant et nous arrivions à piloter l'ouverture et la fermeture de la trappe à partir d'un ordinateur ou d'un smartphone.<br />
 <br />
 ### Des soucis de connexion
-Cependant les petits soucis multipliés par le nombre de groupes en situation de simulation d'activité élève rendent le projet peut confortable au risque de perdre trop de temps à résoudre les problèmes des uns et des autres.<br />
+Cependant les petits soucis multipliés par le nombre de groupes en situation de simulation d'activité élève lors de la formation rendent le projet peut confortable au risque de perdre trop de temps à résoudre les problèmes des uns et des autres.<br />
 ### Un dispositif assez limité dans les scénarios pédagogiques
-Compte nu du fait qu'on ne pouvait pas développer davantage les connexions avec le microcontrôleur, les perspectives d'évolution étaitent très limitées.<br />
-Certes, l'utilisation d'un Wemos D1 en lieu et place d'un ESP8266-ESP01 aurait permis une plus grande souplesse.<br />
-Masis quitte à changer de microcontrôleur autant prendre son grand frèse pour le même budget : l'ESP32.
+Compte tenu du fait qu'on ne pouvait pas développer davantage les connexions avec le microcontrôleur, les perspectives d'évolution étaitent très limitées.<br />
+<table><td><tr>Certes, l'utilisation d'un Wemos D1 en lieu et place d'un ESP8266-ESP01 aurait permis une plus grande souplesse.<br />
+Mais quitte à changer de microcontrôleur autant prendre son grand frèse pour le même budget : l'ESP32.<tr>
+    <tr><img src="https://github.com/SoproLab/Soprolab/blob/master/Pedagogie/SpeNSI_SerreConnectee/wemos.jpg" width="400" alt="Wemos D1 : esp8266 et capteurs, indicateurs lumineux, ... en sandwitch"></tr></td></table>
+
 ### Ouvrir les horizons des possibles
-Dans ce contexte, il convient alors de repenser la chaîne de traitement de l'information pour intégrer d'autres types de capteurs ou d'IHM et pourquoi pas produire une maquette qui pourrait alors servir de support pour un groupe d'élèves dans le cadre d'un mini projet et ou projet NSI.<br />
+Dans ce contexte, il convient alors de repenser la chaîne de traitement de l'information pour intégrer d'autres types de capteurs ou d'IHM et pourquoi pas produire une maquette qui pourrait alors servir de support pour un groupe d'élèves dans le cadre d'un mini projet et ou projet NSI !<br />
 **Capteurs à effet Hall :**
 Les capteurs à effet Hall 49E (détection d'un aimant) permettent de déterminer la période de rotation d'un disque et ou la position approximative de celui-ci. Associés à des amplificateurs opérationnels montés en comparateurs (LM339) on peut ainsi réaliser d'une part un anémomètre et d'autre part une boussole numériques.<br />
 Ces capteurs permettent ainsi de mettre en pratique les capteurs à distance dont sans interaction physique avec le système contrairement aux interrupteurs de fin de course.<br />
