@@ -52,11 +52,9 @@ Mais quitte à changer de microcontrôleur autant prendre son grand frère pour 
 
 ### Ouvrir les horizons des possibles
 Dans ce contexte, il convient alors de repenser la chaîne de traitement de l'information pour intégrer d'autres types de capteurs ou d'IHM et pourquoi pas produire une maquette qui pourrait alors servir de support pour un groupe d'élèves dans le cadre d'un mini projet et ou projet NSI !<br />
-<center>
 
 ![Photo du prototype de maquette](https://github.com/SoproLab/Soprolab/blob/master/Pedagogie/SpeNSI_SerreConnectee/Diagramme.jpg)
 
-</center>
 **Capteurs à effet Hall :**
 Les capteurs à effet Hall 49E (détection d'un aimant) permettent de déterminer la période de rotation d'un disque et ou la position approximative de celui-ci. Associés à des amplificateurs opérationnels montés en comparateurs (LM339) on peut ainsi réaliser d'une part un anémomètre et d'autre part une boussole.<br />
 Ces capteurs permettent ainsi de mettre en pratique les capteurs à distance donc sans interaction physique avec le système contrairement aux interrupteurs de fin de course qui déterminent si la trappe est ouverte ou fermée.<br />
