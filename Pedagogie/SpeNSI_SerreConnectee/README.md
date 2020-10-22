@@ -63,12 +63,14 @@ Ces capteurs permettent ainsi de mettre en pratique les capteurs à distance don
 <br />
 **-> Girouette :** Un disque muni de huit capteurs 49E permettent de déterminer la position de la girouette selon les quatre directions cardinales et les quatre directions ordinales. Là aussi, il conviendra d'avoir recours à un étalonnage de position notamment en équipant la maquette d'un compas numérique facilement accessible à faible coût. Ce point peut être laissé à la réflexion des élèves sur l'évolution à donner au projet pour le rendre plus fonctionnel ou les précautions d'usage à prévoir ...<br />
 <br />
+<table><tr><td>
 *** Liens avec des notions connexes du référentiel :***
 Le principal intérêt de cette girouette est d'aborder le codage d'une information sur huit bits. En effet, une entrée du pcf8574 passe à 1 lorsque le capteur associé détecte la position de l'aimant devant lui. Le PCF8574 transmet alors l'information au microcontrôleur sous la forme d'un octet où un seul bit est à 1 selon la position de l'axe de la girouette -> 1, 2, 4, 8, 16 ... 128.<br />
 On peut aussi aborder ici la transmission d'une information depuis un capteur jusqu'au microntrôleur au regard de contraintes : distance / parasitage / précision / connexions / traitement de l'information / étalonnage / ...). Le bus i2c permet aussi de faire un parallèle avec le transfert d'informations dans le contexte d'une carte mère (bus de données, ...)<br />
 <br />
 C'est aussi l'occasion d'aborder un outil en Python adapté à ce type de sitaution : le dictionnaire.<br />
-Il permet alors d'associer une valeur à une direction : { 1:Nord, 2:Nord-Est, 4:Est, ...}<br />
+Il permet alors d'associer une valeur à une direction : { 1:Nord, 2:Nord-Est, 4:Est, ...}<br /> </td>
+    <td><img src="https://github.com/SoproLab/Soprolab/blob/master/Pedagogie/SpeNSI_SerreConnectee/coupe.jpg" alt="Coupe transversale de la girouette" height="300"></td></tr></table>
 <br />
 **Capteur de lumière :** LDR (Light Dependent Resistor): Pour aborder la conversion analogique numérique, une LDR a été installée sur la maquette. La valeur de la luminosité est convertie sur une échelle de 0 à 4095 puisque le convertisseur analogique numérique de l'ESP32 est codé sur 12 bits.<br />
 <br />
