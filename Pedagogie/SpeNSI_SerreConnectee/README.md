@@ -29,11 +29,11 @@ Les deux GPIO 0 et 2 <i>(entrée / sortie)</i> disponibles sur l'ESP8266-ESP01 d
 
 Il fallait donc récupérer deux autres ports en soudant deux autres fils de connexion directement sur le microcontrôleur, ce qui n'est pas chose facile avec une puce au format SSOP ! <br />
 Une fois le tout installé sur un plaque à trous métallisés il restait à relier le microcontrôleur à l'ordinateur pour la programmation.<br />
-<table><td><tr>
+<table><tr><td>
 Pour cela, nous avons confectionné des cordons de connexion muni d'un convertisseur de type FTDI pour assurer la conversion entre le port de communication USB côté ordinateur et le port série Rx/Tx côté microcontrôleur. <br />
-    <br /></tr>
-    <tr><img src="https://github.com/SoproLab/Soprolab/blob/master/Pedagogie/SpeNSI_SerreConnectee/ftdi.jpg" alt="ftdi adaptation USB - TxTx" align=middle width="300">
-    </tr></td></table>
+    <br /></td>
+    <td><img src="https://github.com/SoproLab/Soprolab/blob/master/Pedagogie/SpeNSI_SerreConnectee/ftdi.jpg" alt="ftdi adaptation USB - TxTx" align=middle width="300">
+    </td></tr></table>
 L'IDE de programmation retenu est Thonny. Il confère un environnement confortable et intuitif pour la programmation en microPython. D'autres enseignants font le choix de Mu ou encore VsCode avec les plugin qui permettent d'établir une connexion avec les ESP32 ou ESP8266.<br />
 Dans la prochaine version 3.3, il sera possible d'éditer directement dans l'éditeur les fichiers HTML/CSS/JS stockés dans la mémoire flash du microcontrôleur, ce qui facilitera grandement les mises à jour et le développement d'un projet comme celui présenté ici.<br />
 
@@ -45,12 +45,15 @@ Lors de la réalisation, on a eu quelques soucis de connexion avec le prototype.
 Cependant les petits soucis multipliés par le nombre de groupes en situation de simulation d'activité élève lors de la formation rendent le projet peut confortable au risque de perdre trop de temps à résoudre les problèmes des uns et des autres.<br />
 ### Un dispositif assez limité dans les scénarios pédagogiques
 Compte tenu du fait qu'on ne pouvait pas développer davantage les connexions avec le microcontrôleur, les perspectives d'évolution étaitent très limitées.<br />
-<table><td><tr>Certes, l'utilisation d'un Wemos D1 en lieu et place d'un ESP8266-ESP01 aurait permis une plus grande souplesse.<br />
-Mais quitte à changer de microcontrôleur autant prendre son grand frèse pour le même budget : l'ESP32.<tr>
-    <tr><img src="https://github.com/SoproLab/Soprolab/blob/master/Pedagogie/SpeNSI_SerreConnectee/wemos.jpg" width="400" alt="Wemos D1 : esp8266 et capteurs, indicateurs lumineux, ... en sandwitch"></tr></td></table>
+<table><tr><td>Certes, l'utilisation d'un Wemos D1 en lieu et place d'un ESP8266-ESP01 aurait permis une plus grande souplesse.<br />
+Mais quitte à changer de microcontrôleur autant prendre son grand frèse pour le même budget : l'ESP32.<td>
+    <td><img src="https://github.com/SoproLab/Soprolab/blob/master/Pedagogie/SpeNSI_SerreConnectee/wemos.jpg" width="400" alt="Wemos D1 : esp8266 et capteurs, indicateurs lumineux, ... en sandwitch"></td></tr></table>
 
 ### Ouvrir les horizons des possibles
 Dans ce contexte, il convient alors de repenser la chaîne de traitement de l'information pour intégrer d'autres types de capteurs ou d'IHM et pourquoi pas produire une maquette qui pourrait alors servir de support pour un groupe d'élèves dans le cadre d'un mini projet et ou projet NSI !<br />
+
+![Photo du prototype de maquette](https://github.com/SoproLab/Soprolab/blob/master/Pedagogie/SpeNSI_SerreConnectee/Diagramme.jpg)
+
 **Capteurs à effet Hall :**
 Les capteurs à effet Hall 49E (détection d'un aimant) permettent de déterminer la période de rotation d'un disque et ou la position approximative de celui-ci. Associés à des amplificateurs opérationnels montés en comparateurs (LM339) on peut ainsi réaliser d'une part un anémomètre et d'autre part une boussole numériques.<br />
 Ces capteurs permettent ainsi de mettre en pratique les capteurs à distance dont sans interaction physique avec le système contrairement aux interrupteurs de fin de course.<br />
