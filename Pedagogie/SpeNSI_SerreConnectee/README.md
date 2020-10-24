@@ -82,14 +82,17 @@ Il permet alors d'associer une valeur (clé) à une direction (value) : { 1:Nord
 **Capteur de lumière :** <br />
 LDR (Light Dependent Resistor): Pour aborder la conversion analogique numérique, une LDR a été installée sur la maquette. La valeur de la luminosité est convertie sur une échelle de 0 à 4095 puisque le convertisseur analogique numérique de l'ESP32 est codé sur 12 bits.<br />
 <br />
-**Développer une I.H.M.**<br />
+**Développer une I.H.M.** la connexion Wifi permet de développer une IHM via un navigateur Web<br />
 <br />
 **Led blanche :** une led blanche permet de simuler l'éclairage de la serre dans le cas d'un ensoleillement insuffisant. Grace à la LDR, on peut ainsi déterminer un seuil en dessous duquel il convient d'allumer la lumière.<br />
 <br />
-**Interrupteur et bouton poussoir :** un interrupteur à bascule et un bouton poussoir permettent de mettre en place différents scénarios où l'utilisateur peut interagir physiquement pour transmettre une commande.<br />
+**Interrupteur, bouton poussoir et potentiomètre :** un interrupteur à bascule et un bouton poussoir (booléens) et un potentiomètre (conversion d'une tension analogique en valeur numérique) permettent de mettre en place différents scénarios où l'utilisateur peut interagir physiquement pour transmettre une commande (bouton poussoir), modifier le mode de fonctionnement du système (interrupteur) ou déterminer un seuil sur une contrainte de température par exemple (potentiomètre).<br />
 <br />
 **Afficheur à cristaux liquides :** un afficheur LCD 16 caractères sur chacune des deux lignes permet là aussi d'informer l'utilisateur sur les valeurs obtenues lors des mesures de grandeurs telles que la température, la pression ou l'humidité relative ou bien encore l'état du système : trappe ouverte ou fermée, ...<br />
 <br />
+**LED verte et rouge :** Deux leds permettent de transmettre une information visuelle (mode automatique / mode manuel par exemple)...<br />
+<br />
+
 ### Activité elève ###
 
 Dans un premier temps, elle porte sur l'analyse de la chaîne de traitement de l'information depuis le capteur jusqu'à l'actionneur.<br />
