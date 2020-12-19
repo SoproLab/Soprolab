@@ -1,3 +1,5 @@
+Modification : 19/12/2020 : 
+- ajout des fichiers STL pour impression 3D des blocs de fixation du micro et buzzer sur un tuyau PE diametre 16mm
 
 # Déterminer expérimentalement la vitesse de propagation du son dans l'air
 
