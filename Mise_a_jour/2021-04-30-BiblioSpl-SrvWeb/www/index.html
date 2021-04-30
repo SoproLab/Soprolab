@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang=fr>
+    <head>
+    <title>SoproLab</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="icon" href="data:,">
+    <style><fichier_css></style>
+    </head>
+    <body>
+        <center>
+        <h1>SoproLab Web Server</h1><br>
+        <h2>Contrôle de la carte connectée</h2><br>
+        <br>
+        
+        <p id="ledv_on"><a href="/?ledv_on">
+        <button  class="button">ALLUMER</button></a></p>
+        
+        <p id="ledv_off"><a href="/?ledv_off">
+        <button class="button button2">ETEINDRE</button></a></p><br>
+        
+        <p>Température : <strong><variable_Temperature> °C</strong></p>
+        <p>Pression : <strong><variable_Pression> hPa</strong></p>
+        <p>Valeur du potentiomètre : 
+        <strong><variable_Potentiometre></strong></p>
+        <div id="bp_serveur">
+            <a href="/?serveur_off"><button onclick=>Serveur OFF</button></a
+        </div>
+        </center>
+         
+    <script><fichier_js></script>
+  </body>
+</html>
