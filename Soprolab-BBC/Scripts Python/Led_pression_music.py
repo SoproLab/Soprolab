@@ -1,5 +1,6 @@
 from microbit import pin8, pin14, pin1, button_a, display, Image
 from neopixel import NeoPixel
+from time import ticks_ms
 from utime import sleep_ms
 import music
 """
@@ -55,16 +56,14 @@ def bargraphe ( led, niv ): # Permet de réaliser un barre_graph [0 -> 8]
         led[n] = (0, 0, 0) # éteindre les autres NEOPIXELS
     led.show() # mettre à jour l'état des diodes NEOPIXEL
 
-def proportion ( val ) :
+def proportion ( val, nb_led ) :
     """
     Entrée : valeur de la pression mesurée 0 - pression_max
     Sortie : index pour le bargraphe neopixel 0 -> 8
     """
-    global pression_max # la variable pression_mas est définie en dehors de cette fonction
-    global nb_led
+    pression_max = 460 # valeur maximale mesurée avec la fonction pression.py
     return int((nb_led * val) / pression_max)
 
-pression_max = 200 # valeur maximale mesurée avec la fonction pression.py
 nb_led = 8 # nombre de led neopixel
 display.show(Image.HAPPY)
 sleep_ms(800)
@@ -73,11 +72,13 @@ arc_en_ciel ( led )
 display.clear()
 # ========================= Début du programme =========
 music.play(music.ENTERTAINER, pin=pin14, wait=True, loop=False)
+print("Terminer : Presser le Boutton A")
+t0 = ticks_ms()
 while not button_a.is_pressed() :
     val = pin1.read_analog()
-    print("val : ",val)
-    num_led = proportion(val)
-    print("num led : ", num_led)
-    bargraphe ( led, num_led )
+    print(ticks_ms()-t0,",",val)
+    num_led = proportion(val, nb_led)
+    n = num_led if num_led<9 else 8
+    bargraphe ( led, n )
     sleep_ms(200)
 bargraphe ( led, 0 )
